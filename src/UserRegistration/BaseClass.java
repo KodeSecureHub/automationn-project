@@ -2,7 +2,7 @@ package UserRegistration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+//With PageFactory
 public class BaseClass {
      public static WebElement signUp(WebDriver driver){
          return driver.findElement(By.linkText("Sign Up"));
