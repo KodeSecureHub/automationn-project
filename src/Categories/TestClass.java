@@ -10,7 +10,7 @@ public class TestClass {
         driver.manage().window().maximize();
         driver.get("https://jpetstore.aspectran.com/");
         PageFactory.initElements(driver, ProductSearch.BaseClass.class);
-
+        BaseClass.fish.click();
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
         BaseClass.dogs.click();

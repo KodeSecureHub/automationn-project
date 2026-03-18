@@ -1,13 +1,8 @@
 package Categories;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class BaseClass {
-
     @FindBy(linkText = "Return to Main Menu")
     public static WebElement mainMenu;
     @FindBy(linkText = "Fish")
