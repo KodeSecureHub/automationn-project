@@ -14,13 +14,16 @@ public class TestClass {
         BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
-        BaseClass.dogs.click();
+        BaseClass.searchBar.sendKeys("dogs");
+        BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
-        BaseClass.cats.click();
+        BaseClass.searchBar.sendKeys("cats");
+        BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
-        BaseClass.reptiles.click();
+        BaseClass.searchBar.sendKeys("reptiles");
+        BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
 
