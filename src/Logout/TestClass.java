@@ -1,5 +1,6 @@
 package Logout;
 
+import org.bouncycastle.jcajce.provider.symmetric.ARC4;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,10 +16,7 @@ public class TestClass {
         BaseClass.passWord(driver).clear();
         BaseClass.passWord(driver).sendKeys("1234");
         BaseClass.submit(driver).click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement logoutBtn = Logout.BaseClass.logout(driver);
-        js.executeScript("arguments[0].scrollIntoView(true);", logoutBtn);
-        js.executeScript("arguments[0].click();", logoutBtn);
-        System.out.println("Logout Successful");
+        Logout.BaseClass.dropDown(driver).click();
+        Logout.BaseClass.logout(driver).click();
     }
 }

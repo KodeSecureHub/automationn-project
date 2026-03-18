@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BaseClass {
+    public static WebElement dropDown(WebDriver driver){
+        return driver.findElement(By.id("dropdownMenuButton"));
+    }
     public static WebElement logout(WebDriver driver) {
         return driver.findElement(By.linkText("Sign Out"));
     }
