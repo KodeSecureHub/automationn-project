@@ -1,9 +1,5 @@
-package ProductSearch;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+package Productsearch;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class BaseClass {

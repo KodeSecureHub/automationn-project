@@ -1,11 +1,8 @@
 package Logout;
-
-import org.bouncycastle.jcajce.provider.symmetric.ARC4;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import Login.BaseClass;
+
 public class TestClass {
     public static void main(String[] args) {
         WebDriver driver = new EdgeDriver();

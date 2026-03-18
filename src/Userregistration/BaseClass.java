@@ -1,21 +1,17 @@
-package UserRegistration;
+package Userregistration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //With PageFactory
 public class BaseClass {
-     public static WebElement signUp(WebDriver driver){
-         return driver.findElement(By.linkText("Sign Up"));
-     }
+    public static WebElement signUp(WebDriver driver){return driver.findElement(By.linkText("Sign Up"));}
      public static WebElement userName(WebDriver driver){
          return driver.findElement(By.name("username"));
      }
     public static WebElement passWord(WebDriver driver){
         return driver.findElement(By.name("password"));
     }
-    public static WebElement repeatedPassword(WebDriver driver){
-        return driver.findElement(By.name("repeatedPassword"));
-    }
+    public static WebElement repeatedPassword(WebDriver driver){return driver.findElement(By.name("repeatedPassword"));}
     public static WebElement firstName(WebDriver driver){
         return driver.findElement(By.name("firstName"));
     }

@@ -1,9 +1,9 @@
-package ProductSearch;
-import org.bouncycastle.jcajce.provider.symmetric.ARC4;
+package Productsearch;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.Keys;
+
 public class TestClass {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new EdgeDriver();
