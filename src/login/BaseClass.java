@@ -17,6 +17,7 @@ public class BaseClass {
     public static WebElement submit(WebDriver driver){
         return driver.findElement(By.xpath("//*[@type='submit']"));
     }
+    
 
 
 }
