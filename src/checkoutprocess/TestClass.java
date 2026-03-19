@@ -28,11 +28,6 @@ public class TestClass {
         WebElement Continue = driver.findElement(By.xpath("//*[text()='Continue']"));
         je.executeScript("arguments[0].scrollIntoView(true)",Continue);
         je.executeScript("arguments[0].click()",Continue);
-        WebElement Confirm = driver.findElement(By.xpath("//*[text()='Confirm']"));
-        je.executeScript("arguments[0].scrollIntoView(true)",Confirm);
-        je.executeScript("arguments[0].click()",Confirm);
-
-        BaseClass.myOrders(driver).click();
 
 
     }
