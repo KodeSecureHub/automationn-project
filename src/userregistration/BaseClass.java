@@ -1,11 +1,11 @@
-package Userregistration;
+package userregistration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-//With PageFactory
+//Without PageFactory
 public class BaseClass {
     public static WebElement signUp(WebDriver driver){return driver.findElement(By.linkText("Sign Up"));}
-     public static WebElement userName(WebDriver driver){
+    public static WebElement userName(WebDriver driver){
          return driver.findElement(By.name("username"));
      }
     public static WebElement passWord(WebDriver driver){

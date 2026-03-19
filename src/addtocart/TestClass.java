@@ -1,8 +1,5 @@
-package AddToCart;
-import org.bouncycastle.jcajce.provider.symmetric.ARC4;
-import org.openqa.selenium.By;
+package addtocart;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
 

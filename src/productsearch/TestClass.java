@@ -1,4 +1,4 @@
-package Productsearch;
+package productsearch;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,19 +9,24 @@ public class TestClass {
         WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://jpetstore.aspectran.com/");
+
         PageFactory.initElements(driver, BaseClass.class);
+
         BaseClass.searchBar.sendKeys("fish");
         BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
+
         BaseClass.searchBar.sendKeys("dogs");
         BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
+
         BaseClass.searchBar.sendKeys("cats");
         BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
         BaseClass.mainMenu.click();
+
         BaseClass.searchBar.sendKeys("reptiles");
         BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
