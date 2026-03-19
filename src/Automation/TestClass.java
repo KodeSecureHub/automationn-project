@@ -74,7 +74,7 @@ public class TestClass extends BaseClass {
 
         Thread.sleep(3000);
 
-        // ================== UPDATE CART (FIXED) ==================
+        // ================== UPDATE CART ==================
         WebElement quantity = obj.driver.findElement(By.name("EST-1")); // correct locator
         quantity.clear();
         quantity.sendKeys("2");
