@@ -21,7 +21,7 @@ public class TestClass {
 
         BaseClass.fish(driver).click();
         BaseClass.fishItem(driver).click();
-        addtocart.BaseClass.cart1(driver).click();
+        BaseClass.cart(driver).click();
         BaseClass.proceedToCheckout(driver).click();
 
         JavascriptExecutor je =  (JavascriptExecutor) driver;

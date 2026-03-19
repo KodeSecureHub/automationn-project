@@ -8,4 +8,6 @@ public class BaseClass {
     public static WebElement fish(WebDriver driver){return driver.findElement(By.linkText("Fish"));}
     public static WebElement fishItem(WebDriver driver){return driver.findElement(By.linkText("FI-SW-01"));}
     public static WebElement proceedToCheckout(WebDriver driver){return driver.findElement(By.linkText("Proceed to Checkout"));}
+
+    public static WebElement cart(WebDriver driver) {return driver.findElement(By.linkText("Add to Cart"));}
 }
