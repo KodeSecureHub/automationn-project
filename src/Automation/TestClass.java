@@ -1,11 +1,10 @@
-package test;
+package Automation;
 
-import base.BaseClass;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class TestClass extends BaseClass {
 
@@ -14,43 +13,48 @@ public class TestClass extends BaseClass {
         TestClass obj = new TestClass();
         obj.setup();
 
-        // USER REGISTRATION
+        // ================== SIGN UP ==================
         userregistration.BaseClass.signUp(obj.driver).click();
-        userregistration.BaseClass.userName(obj.driver).sendKeys("kodee");
+
+        userregistration.BaseClass.userName(obj.driver).sendKeys("kodee123");
         userregistration.BaseClass.passWord(obj.driver).sendKeys("1234");
         userregistration.BaseClass.repeatedPassword(obj.driver).sendKeys("1234");
 
         userregistration.BaseClass.firstName(obj.driver).sendKeys("Kodeeswaran");
         userregistration.BaseClass.lastName(obj.driver).sendKeys("A S");
-        userregistration.BaseClass.email(obj.driver).sendKeys("kodeeswaranofficial@gmail.com");
+        userregistration.BaseClass.email(obj.driver).sendKeys("test@mail.com");
         userregistration.BaseClass.phone(obj.driver).sendKeys("1234567890");
 
-        userregistration.BaseClass.address1(obj.driver).sendKeys("Dubai kuruku sandhu");
-        userregistration.BaseClass.address2(obj.driver).sendKeys("Dubai kuruku sandhu");
-        userregistration.BaseClass.city(obj.driver).sendKeys("Dubai");
-        userregistration.BaseClass.state(obj.driver).sendKeys("Emirates");
+        userregistration.BaseClass.address1(obj.driver).sendKeys("Address1");
+        userregistration.BaseClass.address2(obj.driver).sendKeys("Address2");
+        userregistration.BaseClass.city(obj.driver).sendKeys("City");
+        userregistration.BaseClass.state(obj.driver).sendKeys("State");
 
         userregistration.BaseClass.zip(obj.driver).sendKeys("00000");
-        userregistration.BaseClass.country(obj.driver).sendKeys("United Arab Emirates");
+        userregistration.BaseClass.country(obj.driver).sendKeys("India");
 
         userregistration.BaseClass.bird(obj.driver).click();
         Thread.sleep(1000);
 
         userregistration.BaseClass.listOption(obj.driver).click();
         userregistration.BaseClass.bannerOption(obj.driver).click();
-        Thread.sleep(1000);
 
+        Thread.sleep(1000);
         userregistration.BaseClass.submit(obj.driver).click();
 
-        // LOGIN
+        Thread.sleep(3000);
+
+        // ================== LOGIN ==================
         login.BaseClass.signIn(obj.driver).click();
         login.BaseClass.userName(obj.driver).clear();
-        login.BaseClass.userName(obj.driver).sendKeys("kodi");
+        login.BaseClass.userName(obj.driver).sendKeys("kodee123");
         login.BaseClass.passWord(obj.driver).clear();
         login.BaseClass.passWord(obj.driver).sendKeys("1234");
         login.BaseClass.submit(obj.driver).click();
 
-        // PRODUCT SEARCH
+        Thread.sleep(3000);
+
+        // ================== PRODUCT SEARCH ==================
         PageFactory.initElements(obj.driver, productsearch.BaseClass.class);
 
         productsearch.BaseClass.searchBar.sendKeys("fish");
@@ -58,51 +62,58 @@ public class TestClass extends BaseClass {
         Thread.sleep(2000);
         productsearch.BaseClass.mainMenu.click();
 
-        // CATEGORIES
-        PageFactory.initElements(obj.driver, categories.BaseClass.class);
-
-        categories.BaseClass.fish.click();
+        productsearch.BaseClass.searchBar.sendKeys("dogs");
+        productsearch.BaseClass.searchBar.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
-        categories.BaseClass.mainMenu.click();
+        productsearch.BaseClass.mainMenu.click();
 
-        // ADD TO CART
-        PageFactory.initElements(obj.driver, addtocart.BaseClass.class);
+        // ================== ADD TO CART ==================
+        checkoutprocess.BaseClass.fish(obj.driver).click();
+        checkoutprocess.BaseClass.fishItem(obj.driver).click();
+        checkoutprocess.BaseClass.cart(obj.driver).click();
 
-        addtocart.BaseClass.fish1.click();
-        addtocart.BaseClass.product_id1.click();
-        addtocart.BaseClass.cart.click();
+        Thread.sleep(3000);
 
-        // UPDATE CART
-        PageFactory.initElements(obj.driver, updatecart.BaseClass.class);
-
-        updatecart.BaseClass.update1.clear();
-        updatecart.BaseClass.update1.sendKeys("2");
-
-        updatecart.BaseClass.updateClick.click();
-
-        // CHECKOUT (FIXED FLOW)
-        Thread.sleep(2000);
+        // ================== UPDATE CART (FIXED) ==================
+        WebElement quantity = obj.driver.findElement(By.name("EST-1")); // correct locator
+        quantity.clear();
+        quantity.sendKeys("2");
 
         JavascriptExecutor js = (JavascriptExecutor) obj.driver;
 
-        WebElement checkout = checkoutprocess.BaseClass.proceedToCheckout(obj.driver);
+        WebElement updateBtn = obj.driver.findElement(By.xpath("//button[@type='submit']"));
+        js.executeScript("arguments[0].click();", updateBtn);
+
+        Thread.sleep(3000);
+
+        // ================== CHECKOUT ==================
+        WebElement checkout = obj.driver.findElement(By.linkText("Proceed to Checkout"));
         js.executeScript("arguments[0].scrollIntoView(true);", checkout);
+        Thread.sleep(1000);
         js.executeScript("arguments[0].click();", checkout);
 
-        // CONTINUE
+        Thread.sleep(2000);
+
+        // ================== CONTINUE ==================
         WebElement Continue = obj.driver.findElement(By.xpath("//*[text()='Continue']"));
         js.executeScript("arguments[0].scrollIntoView(true)", Continue);
         js.executeScript("arguments[0].click()", Continue);
 
-        // CONFIRM
+        Thread.sleep(2000);
+
+        // ================== CONFIRM ==================
         WebElement Confirm = obj.driver.findElement(By.xpath("//*[text()='Confirm']"));
         js.executeScript("arguments[0].scrollIntoView(true)", Confirm);
         js.executeScript("arguments[0].click()", Confirm);
 
-        // ORDER CONFIRMATION
+        Thread.sleep(2000);
+
+        // ================== ORDER ==================
         orderconfirmation.BaseClass.myOrders(obj.driver).click();
 
-        // LOGOUT
+        Thread.sleep(2000);
+
+        // ================== LOGOUT ==================
         logout.BaseClass.dropDown(obj.driver).click();
         logout.BaseClass.logout(obj.driver).click();
 
